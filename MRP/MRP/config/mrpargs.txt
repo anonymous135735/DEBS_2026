@@ -1,0 +1,70 @@
+# arg0 the ring count
+3
+# arg1 the group id 
+-1
+# arg2 the number of producers
+1
+# arg3 the number of consumers
+2
+# arg4 the warmup messages
+1000000
+# arg5 the test messages
+4000000
+# arg6 the message size in bytes
+1024
+# arg7 the inter-message delay distribution "NONE" "NORMAL" "POISSON" 
+# NONE    = no delay control, use the proability threshold to send or not.
+# NORMAL  = use the production rate per sec, the mean is automatically calculated, and stddev is 20% of the mean
+# POISSON = use the production rate per sec, the mean is automatically calculated
+NORMAL
+# arg8 the production rate per sec 
+40000
+# arg9 the message distribution over partitions "UNIFORM" "ZIPFIAN"
+# UNIFORM = random selection of the partition to send each message, partitions will have (approximately) the same number of messages.
+# ZIPFIAN = a few partitions receive most of the messages, use zipfian skew factor to control the exponent (alpha)
+UNIFORM
+# arg10 the probability threshold 
+0.001
+# arg11 the zipfian skew factor 
+1.0
+# arg12 the P1_PREEXECUTION_NUMBER 5000
+5000
+# arg13 the P1_RESEND_TIME 1000
+60000
+# arg14 the CONCURRENT_VALUES 20
+20
+# arg15 the VALUE_SIZE 32768
+32768
+# arg16 the VALUE_COUNT 900000
+900000
+# arg17 the BATCH_POLICY none
+none
+# arg18 the VALUE_RESEND_TIME 3000
+60000
+# arg19 the QUORUM_SIZE 2
+2
+# arg20 the STABLE_STORAGE .BufferArray
+ch.usi.da.paxos.storage.InMemory
+# arg21 the TCP_NODELAY 1
+1
+# arg22 the TCP_CRC 0
+0
+# arg23 the BUFFER_SIZE 2097152
+2097152
+# arg24 the LEARNER_RECOVERY 1
+1
+# arg25 the TRIM_MODULO 0
+0
+# arg26 the TRIM_QUORUM 2
+2
+# arg27 the AUTO_TRIM 0
+0
+# arg28 the MULTI_RING_LAMBDA 0
+40000
+# arg29 the MULTI_RING_DELTA_T 100
+1
+# arg30 the DELIVER_SKIP_MESSAGES 1
+1
+# arg31 the MULTI_RING_START_TIME 0
+30
+#

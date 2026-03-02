@@ -1,0 +1,46 @@
+# arg0 the number of topics
+1
+# arg1 the number of partitions 
+3
+# arg2 the replication factor
+2
+# arg3 the number of producers
+1
+# arg4 the number of consumers 
+2
+# arg5 the warmup messages
+1000000
+# arg6 the test messages 
+4000000
+# arg7 the message size in bytes
+1024
+# arg8 the inter-message delay distribution "NONE" "NORMAL" "POISSON" 
+# NONE    = no delay control, use the proability threshold to send or not.
+# NORMAL  = use the production rate per sec, the mean is automatically calculated, and stddev is 20% of the mean
+# POISSON = use the production rate per sec, the mean is automatically calculated
+NORMAL
+# arg9 the production rate per sec 
+40000
+# arg10 the message distribution over partitions "UNIFORM" "ZIPFIAN"
+# UNIFORM = random selection of the partition to send each message, partitions will have (approximately) the same number of messages.
+# ZIPFIAN = a few partitions receive most of the messages, use zipfian skew factor to control the exponent (alpha)
+UNIFORM
+# arg11 the probability threshold 
+0.001
+# arg12 the zipfian skew factor 
+1.0
+# arg13 producer list of topics 
+all
+# arg14 consumer list of topics 
+all
+# arg15 the number of MP
+2
+# arg16 MP deltaM in msec
+5
+# arg17 MP deltaAck in msec 
+500
+# arg18 MP rMax 
+5
+# arg19 MP run duration in sec
+150
+#

@@ -1,0 +1,53 @@
+plugins {
+    id 'java'
+    id 'java-library'
+    id 'idea'
+    id 'eclipse'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+//group = "your.group.id"  // Optional: customize if using a package namespace
+//version = "0.0.4"
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://packages.confluent.io/maven"
+    }
+}
+
+dependencies {
+    implementation 'org.slf4j:slf4j-nop:2.0.17'
+    implementation 'org.apache.kafka:kafka-clients:3.9.1'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.19.2' // Optional, for OAuth
+}
+
+// Disable the default JAR task
+jar {
+    enabled = false
+}
+
+// Configure the shadow JAR (fat JAR with dependencies)
+shadowJar {
+    archiveBaseName.set("ATOM")
+    archiveVersion.set("1.1.5")
+    archiveClassifier.set("")  // No "-all" suffix
+    // Uncomment and set the entry point if needed:
+    // manifest {
+    //     attributes 'Main-Class': 'your.package.MainClass' // Set if you have a main class
+    // }
+}
+
+// Ensure shadowJar runs with the build task
+tasks.build {
+    dependsOn shadowJar
+}
+
+// Optional: enable stricter compiler warnings
+tasks.withType(JavaCompile).configureEach {
+    options.compilerArgs.addAll(['-Xlint:deprecation', '-Xlint:unchecked'])
+}

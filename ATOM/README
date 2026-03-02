@@ -1,0 +1,17 @@
+ATOM: ATOM: Asynchronous Total Order Mechanism for Publish/Subscribe
+--------------------------------------------------------------------
+
+To build (using Gradle 8.7):
+gradle clean build 
+
+To run Kafka (3.9.1 Zookeeper mode):
+kafka_start_stop_status.sh start 
+
+To modify ATOM configurations:
+Modify the file ATOM/config/args.txt to set the configurations
+
+To run the Baseline:
+run_basline.sh 
+
+To run the ATOM:
+run_TO.sh

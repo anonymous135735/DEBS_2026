@@ -1,0 +1,14 @@
+USING DEDECATED CLIENTS TO TEST MRP 
+--------------------------------------------------------------------
+
+To run Zookeeper:
+zk_start_stop_status.sh start 
+
+To modify MRP configurations:
+Modify the file MRP/config/mrpargs.txt to set the configurations
+
+To run MRP:
+MRP_run.sh
+
+To kill MRP:
+MRP_kill.sh
